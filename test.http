@@ -2,7 +2,7 @@ PATCH http://localhost:3000/users/me
 Accept: application/json
 
 ###
-GET http://localhost:3000/users/me
+GET http://51.250.105.212:3000/users/me
 Accept: application/json
 
 ###
