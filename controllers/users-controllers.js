@@ -18,13 +18,19 @@ const createUser = async (req, res, next) => {
     } = req.body;
 
     const hash = await bcrypt.hash(password, SALT_ROUNDS);
-    await User.create({
+    const user = await User.create({
       name, email, password: hash,
     });
 
+    const token = await jwt.sign(
+      { _id: user._id },
+      NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret',
+      { expiresIn: '7d' },
+    );
+
     return res
       .status(201).json({
-        name, email,
+        token,
       });
   } catch (err) {
     if (err.code === MONGO_DUPLICATE_ERROR_CODE) {
