@@ -87,7 +87,7 @@ const updateUserInfo = async (req, res, next) => {
     if (!user) {
       throw new NotFoundError('Пользователь не найден');
     }
-    return res.status(200).json({user: user, message: "Профиль успешно изменен!"});
+    return res.status(200).json({user, message: "Профиль успешно изменен!"});
   } catch (err) {
     if (err.name === 'ValidationError' || err.name === 'CastError') {
       return next(new BadRequestError('Переданы некорректные данные'));
