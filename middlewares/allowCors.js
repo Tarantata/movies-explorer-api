@@ -1,6 +1,6 @@
 const allowedCorsDomains = [
-  'https://vvv-diploma.backend.nomoredomainsclub.ru',
-  'http://vvv-diploma.backend.nomoredomainsclub.ru',
+  'https://vvv-diploma.frontend.nomoredomainsclub.ru',
+  'http://vvv-diploma.frontend.nomoredomainsclub.ru',
   'http://localhost:3000',
 ];
 
